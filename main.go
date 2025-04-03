@@ -1,17 +1,15 @@
 package main
 
 import (
+	"github.com/davejbax/packer-plugin-arm/builder"
 	"github.com/hashicorp/packer-plugin-sdk/plugin"
-	"github.com/mkaczanowski/packer-builder-arm/builder"
+	"log"
 )
 
 func main() {
-	server, err := plugin.Server()
-	if err != nil {
-		panic(err)
+	pps := plugin.NewSet()
+	pps.RegisterBuilder(plugin.DEFAULT_NAME, builder.NewBuilder())
+	if err := pps.Run(); err != nil {
+		log.Fatalf(err.Error())
 	}
-	if err := server.RegisterBuilder(builder.NewBuilder()); err != nil {
-		panic(err)
-	}
-	server.Serve()
 }
