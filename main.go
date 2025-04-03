@@ -10,6 +10,6 @@ func main() {
 	pps := plugin.NewSet()
 	pps.RegisterBuilder(plugin.DEFAULT_NAME, builder.NewBuilder())
 	if err := pps.Run(); err != nil {
-		log.Fatalf(err.Error())
+		log.Fatal(err.Error())
 	}
 }

@@ -3,8 +3,8 @@
 package builder
 
 import (
-	"github.com/hashicorp/hcl/v2/hcldec"
 	"github.com/davejbax/packer-plugin-arm/config"
+	"github.com/hashicorp/hcl/v2/hcldec"
 	"github.com/zclconf/go-cty/cty"
 )
 

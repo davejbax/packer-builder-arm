@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os/exec"
 
+	"github.com/davejbax/packer-plugin-arm/config"
 	"github.com/hashicorp/packer-plugin-sdk/multistep"
 	"github.com/hashicorp/packer-plugin-sdk/packer"
-	"github.com/mkaczanowski/packer-builder-arm/config"
 )
 
 // StepResizePartitionFs expand already partitioned image
